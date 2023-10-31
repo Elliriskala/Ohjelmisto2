@@ -16,8 +16,6 @@
 # sen jälkeen, kun kilpailu on päättynyt.
 
 import random
-
-
 class Car:
 
     def __init__(self, licenseplate, max_speed):
