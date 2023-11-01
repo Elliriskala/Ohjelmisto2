@@ -16,6 +16,8 @@
 # sen jälkeen, kun kilpailu on päättynyt.
 
 import random
+
+
 class Car:
 
     def __init__(self, licenseplate, max_speed):
@@ -44,36 +46,33 @@ class Car:
 
 
 class Race:
-    hour = 1
 
-    def __init__(self, race_name, race_len, race_cars):
-        self.race_name = race_name
+    def __init__(self, name, race_len, race_cars):
+        self.name = name
         self.race_len = race_len
         self.race_cars = race_cars
 
-    def hour_goes_by(self, hour):
+    def time(self):
         print(f"Hour: {hour}")
         for race_car in race_cars:
             race_car.speed_up(random.randint(-10, 15))
             race_car.car_travel(1)
 
-    def static(self):
+    def status(self):
+        print(f"Here is the status at hour {hour}: ")
         for race_car in race_cars:
-            print("Here is the current static: ")
             print(
                 f"Licenseplate: {race_car.licenseplate}, maxium speed: {race_car.max_speed} km/h,"
                 f" travelled distance: {race_car.travelled} km")
 
     def race_over(self):
-        global hour
-        while True:
-            if not any(race_car.travelled >= 8000 for race_car in race_cars):
-                hour = hour + 1
-                continue
-            else:
-                print("The race has ended.")
-                break
+        for race_car in self.race_cars:
+            if race_car.travelled >= self.race_len:
+                return True
+        return False
 
+
+hour = 0
 
 race_cars = []
 for i in range(10):
@@ -88,5 +87,12 @@ for race_car in race_cars:
 
 car_race = Race("Suuri romuralli", 8000, race_cars)
 
+while not car_race.race_over():
+    Race.time(1)
+    hour += 1
+    if hour % 10 == 0:
+        Race.status(1)
+
 print("*=======================================================================*")
-print("The final scoreboard:")
+print(f"The race 'Suuri Romuralli' has ended.")
+car_race.status()
