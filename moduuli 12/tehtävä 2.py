@@ -10,7 +10,12 @@ paikkakunta = input("Minkä paikkakunnan säätilan haluat tietää? ")
 
 request = f"https://api.openweathermap.org/data/2.5/weather?q={paikkakunta}&appid=6fee9e90dcf3e47bb04a56828c171eee"
 
-response = requests.get(request).json()
-print(f"Paikkakunnassa {paikkakunta} lämpötila: {response['main']['temp']-273.15:.1f} celsius-astetta.")
-print(f"Säätila: {response['weather'][0]['main']}.")
+try:
+    response = requests.get(request).json()
+    print(f"Paikkakunnassa {paikkakunta} lämpötila: {response['main']['temp'] - 273.15:.1f} celsius-astetta.")
+    print(f"Säätila: {response['weather'][0]['main']}.")
+except requests.exceptions.RequestException as error:
+    print("Network connection failed.")
+
+
 
