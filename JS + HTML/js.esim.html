@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Hei käytetään konsolia</h1>
+
+<div>Moi olen divi</div>
+
+
+<script>
+  'use strict';
+  // kommentti
+
+  console.log('Moro maailma suoraan bodyn sisältä!');
+  // alert('Terve olen alert!!');
+  const nimi = prompt('Moi, mikä sinun nimesi on? ');
+  // const nimi = 'Elli'
+
+  console.log(nimi);
+
+  // string literal = merkkijono
+
+  const merkkijono = 'Nimesi siis on: ' + nimi;
+  console.log(merkkijono);
+
+  // template literal = muotoiltava lauseke
+  const muotoiltu = `Kiva tavata ${nimi}!`;
+  console.log(muotoiltu);
+
+  // var, älä käytä jos ei ole pakko
+  // käytä strict modea ja const/let muuttujia
+
+  let teacher = 'Ulla';
+  let surname;
+  surname = 'Opettaja';
+  teacher = teacher + ' ' + surname;
+  console.log(teacher);
+
+  const teacher2 = 'Matti';
+  const surname2 = 'Peltoniemi';
+
+  // aiheuttaa virheen, CONST on siis MUUTTUMATON eli CONSTANT
+  // teacher2 = teacher2 + ' ' + surname2;
+  console.log(teacher2);
+
+  const multiplier = 4.1868;
+  const k1 = prompt('Give the amount of energy for lunch (kcal).');
+  const k2 = prompt('Enter the amount of energy for dinner(kcal).');
+
+  const j1 = multiplier * k1;
+  const j2 = multiplier * k2;
+
+  console.log(`At breakfast you got ${j1} kJ and at dinner you got ${j2} kJ.`);
+
+  const taulukko = [0, 1, 2, 3, 4, 5];
+  console.log(taulukko);
+
+  taulukko[0] = 1;
+  console.log(taulukko);
+
+  // let muuttujan tyyppiä voi vaihtaa lennosta
+  // js on niin sanotusti loosely typed
+  let nimiTaas = 'Elli';
+  console.log(typeof nimiTaas, nimiTaas);
+  nimiTaas = 22;
+  console.log(typeof nimiTaas, nimiTaas);
+
+  // käytetään eka toString metodia
+  const ageStr = '13';
+  const age = ageStr.toString()
+  console.log(typeof age, age)
+
+</script>
+</body>
+</html>
