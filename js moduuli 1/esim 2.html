@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>esim. loopit</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  /**
+
+   const cabinClass = prompt("Enter the cabin class (A/B/C).");
+   // cabinClass = cabinClass.toUpperCase(); // a -> A, mutta uutta arvoa ei sijoiteta muuttujaan
+   console.log('user choice', cabinClass)
+
+   switch (cabinClass.toUpperCase()) {
+   case 'A':
+   console.log('Top deck cabin with window.');
+   break;
+   case 'B':
+   console.log('Top deck cabin without window.');
+   break;
+   case 'C':
+   console.log('Windowless cabin under the car deck.');
+   break;
+   default:
+   console.log("Invalid cabin class.");
+   }
+   // suoritus jatkuu täältä break; jälkeen
+
+   */
+
+// silmukat = loopit = toistorakenteet
+// While, toimii kuin pythonissa
+
+  let counter = 0;
+  while (counter < 5) {
+    console.log('ehto oli tosi', counter);
+    counter++; // sama, kuin counter = counter + 1 tai counter += 1
+  }
+
+  // heitetään noppaa niin kauan että saadaan 6
+
+  let gameOver = false;
+  while (!gameOver) {
+    // arvotaan silmäluku väliltä 1-6
+    const number = Math.floor(Math.random() * 6 + 1); // Math.random() returns 0-0.999999999999999999999999999
+    console.log('number', number)
+    if (number === 6) {
+      gameOver = true;
+    }
+  }
+
+  // for silmukka
+  for (let i = 0; i < 10; i++) {
+    console.log('for-silmukan i:n arvo', i)
+  }
+
+  for (let i = 100; i > 10; i -= 3) {
+    console.log('for-silmukan i:n arvo', i)
+  }
+
+  // arvotaan 7 numeron lottorivi, pallot 1-40
+
+  for (let i = 0; i < 7; i++) {
+    const number2 = Math.floor(Math.random() * 40 + 1);
+    console.log(i + 1 + '. pallon arvo: ' + number2);
+  }
+
+  let result;
+  do {
+    result = Math.floor(Math.random() * 6) + 1;
+    console.log(result);
+  } while (result < 6);
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esim moduuli 1</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  const age = 15;
+  if (age < 18) {
+    console.log('Olet alaikäinen');
+  }
+
+  // loogiset operaattorit hieman erilaisia:
+  // and &&, or ||, not !
+
+  const number = 11;
+
+  if (number % 2 == 1 && number > 10) {
+    console.log('You entered an even number greater than 10');
+  }
+
+  // js: ssä on iso ero === eli strict equality
+
+  const num = 5;
+  const stringNum = '5';
+
+  if (num === stringNum) {
+    console.log('Equal numbers');
+  } else {
+    console.log('Not equal');
+  }
+
+  if (num == stringNum) {
+    console.log('Equal');
+  } else {
+    console.log('Not equal');
+  }
+
+
+  const age2 = 88;
+
+  if (age2 >= 65) {
+    console.log('You are of retirement age');
+    if (age2 > 88);
+    console.log('You are really old.')
+  } else if (age2 >= 30) {
+    console.log('You are middle aged.');
+  } else if (age2 >= 18) {
+    console.log('You are a young adult');
+  } else {
+    console.log('That is not even a number.');
+  }
+
+</script>
+
+</body>
+</html>
+
