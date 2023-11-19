@@ -14,5 +14,15 @@ for(let i=1; i<=participant; i++) {
   participants.push(name);
 }
 
-console.log(participants);
+function namesInOrder () {
+  participants.sort();
+  let participantNames = document.querySelector('#participantNames');
+  participantNames.innerHTML = "";
+  participants.forEach(function (nameOf) {
+    let li = document.createElement("li");
+    li.textContent = nameOf;
+    participantNames.appendChild(li);
+  });
+}
 
+namesInOrder(participants);
