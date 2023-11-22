@@ -1,11 +1,13 @@
 from flask import Flask, request, Response
 import json
 
-
 app = Flask(__name__)
+
+
 @app.route('/')
 def get_root():
     return 'Moro maailma!'
+
 
 # example query: http://127.0.0.1:3000/kukkuu?name=Elli&age=22?moreparam=value
 @app.route('/kukkuu')
@@ -60,6 +62,7 @@ def multiply(number):
     response = Response(response=response_data, status=status_code, mimetype='application/json')
     return response
 
+
 @app.errorhandler(404)
 def page_not_found(virhekoodi):
     vastaus = {
@@ -70,8 +73,6 @@ def page_not_found(virhekoodi):
     return Response(response=jsonvast, status=404, mimetype="application/json")
 
 
-
 if __name__ == '__main__':
     app.run(use_reloader=True, host='127.0.0.1', port=3000)
-
 
