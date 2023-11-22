@@ -151,3 +151,28 @@ let muuttuja2 = 2;
   }
 }
 console.log(muuttuja2);
+
+// taulukko muuttujan parametrina
+// uusi muuttuja numbers viittaa samaan taulukkoon kuin pääohjelman numbers
+
+function arrayTest(numbers) {
+  numbers.push(9);
+  return numbers;
+}
+
+const numbers = [1, 2, 3];
+
+console.log('Funktion paluuarvo', arrayTest(numbers));
+console.log('alkuperäinen taulukko', numbers);
+
+const numbers2 = numbers; // kopioidaan viittaus uuteen muuttujaan
+console.log('kopioitu alkuperäinen taulukko', numbers2);
+
+
+let numbers3 = []; // uuden taulukon luominen ja olemassaolevan taulukon yhdistäminen
+numbers3 = numbers3.concat(numbers);
+console.log('kopioidut taulukon arvot', numbers3);
+
+// toinen tapa kopioida arvot uuteen taulukkoon (spread-operaattori)
+const numbers4 = [...numbers]; // ...[1, 2, 3] => 1, 2, 3
+console.log('myös kopioidut taulukon arvot', numbers4);

@@ -6,7 +6,7 @@
 // that rolls the dice until the result is 6. The main program should
 // print out the result of each roll in an unordered list (<ul>). (2p)
 
-let diceRolled = document.querySelector('#dice');
+let diceRolled = document.querySelector('#dice')
 function diceRoll() {
   let result = Math.floor(Math.random() * 6 + 1);
   return result;
